@@ -5,10 +5,7 @@ const searchBar = document.getElementById('searchBar');
 const sortOptions = document.getElementById('sortOptions');
 // https://www.jsdelivr.com/tools/purge
 const zonesurls = [
-    "https://wowdabug.github.io/gn/zones.json",
-    "https://wowdabug.github.io/gn/zones.json",
-    "https://wowdabug.github.io/gn/zones.json",
-    "https://wowdabug.github.io/gn/zones.json"
+    "zones.json"
 ];
 let zonesURL = zonesurls[Math.floor(Math.random() * zonesurls.length)];
 const coverURL = "https://cdn.jsdelivr.net/gh/gn-math/covers@main";
@@ -29,7 +26,7 @@ async function listZones() {
             shajson = await sharesponse.json();
             sha = shajson[0]['sha'];
             if (sha) {
-                zonesURL = `https://wowdabug.github.io/gn@${sha}/zones.json`;
+                zonesURL = `zones.json`;
             }
           } catch (error) {
             try {
@@ -37,7 +34,7 @@ async function listZones() {
                 if (secondarysharesponse && secondarysharesponse.status === 200) {
                     sha = (await secondarysharesponse.text()).trim();
                     if (sha) {
-                        zonesURL = `https://wowdabug.github.io/gn@${sha}/zones.json`;
+                        zonesURL = `zones.json`;
                     }
                 }
             } catch(error) {}
@@ -629,30 +626,12 @@ function loadPrivacy() {
 }
 
 function loadDMCA() {
-    document.getElementById('popupTitle').textContent = "DMCA";
+    document.getElementById('popupTitle').textContent = "Info";
     const popupBody = document.getElementById('popupBody');
     popupBody.innerHTML = `
         <div class="dmca-content">
             <p>
-                If you own or developed a game that is on <strong>gn-math</strong> 
-                and would like it removed, please do one of the following:
-            </p>
-            <ol>
-                <li>
-                    <a href="https://discord.gg/D4c9VFYWyU" target="_blank" rel="noopener noreferrer">
-                        Join the Discord
-                    </a> and DM <strong>breadbb</strong> or ping me in a public channel 
-                    <strong>[INSTANT RESPONSE]</strong>
-                </li>
-                <li>
-                    Email me at 
-                    <a href="mailto:gn.math.business@gmail.com">gn.math.business@gmail.com</a> 
-                    with the subject starting with <code>!DMCA</code>.
-                    <strong>[DELAYED RESPONSE]</strong>
-                </li>
-            </ol>
-            <p>
-                If you are going to do an email, please show proof you own the game before I have to ask.
+                This site is a fork of gn-math with some simple tweaks to make the user experience a bit better. Feel free to use the original site if it's not DMCA'd or blocked.
             </p>
         </div>
     `;

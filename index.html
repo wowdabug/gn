@@ -24,7 +24,7 @@
     <script src="gnmath.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gn-math</title>
+    <title>gn-wdbg</title>
 </head>
 <body class="dark-mode">
     <header>
@@ -105,6 +105,7 @@
    </script>
     <footer>
         <div class="footer-links">
+            <a href="#" onclick="loadDMCA(); return false;">Info</a>
             <a href="javascript:saveData()">Export Data</a>
             <a href="#" onclick="document.getElementById('importData').click(); return false;">Import Data</a>
             <input type="file" id="importData" style="display: none;" onchange="loadData(event)">
