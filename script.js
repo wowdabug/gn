@@ -3,7 +3,6 @@ const zoneViewer = document.getElementById('zoneViewer');
 let zoneFrame = document.getElementById('zoneFrame');
 const searchBar = document.getElementById('searchBar');
 const sortOptions = document.getElementById('sortOptions');
-// https://www.jsdelivr.com/tools/purge
 const zonesurls = [
     "zones.json"
 ];
@@ -161,9 +160,9 @@ function displayFeaturedZones(featuredZones) {
         featuredContainer.appendChild(zoneItem);
     });
     if (featuredContainer.innerHTML === "") {
-        featuredContainer.innerHTML = "No featured zones found.";
+        featuredContainer.innerHTML = "No featured games found.";
     } else {
-        document.getElementById("allZonesSummary").textContent = `Featured Zones (${featuredZones.length})`;
+        document.getElementById("allZonesSummary").textContent = `Featured Games (${featuredZones.length})`;
     }
 
     const lazyImages = document.querySelectorAll('#featuredZones img.lazy-zone-img');
@@ -210,7 +209,7 @@ function displayZones(zones) {
     if (container.innerHTML === "") {
         container.innerHTML = "No zones found.";
     } else {
-        document.getElementById("allSummary").textContent = `All Zones (${zones.length})`;
+        document.getElementById("allSummary").textContent = `All Games (${zones.length})`;
     }
 
     const lazyImages = document.querySelectorAll('img.lazy-zone-img');
@@ -624,4 +623,5 @@ XMLHttpRequest.prototype.open = function (method, url) {
 HTMLCanvasElement.prototype.toDataURL = function (...args) {
     return "";
 };
+
 
